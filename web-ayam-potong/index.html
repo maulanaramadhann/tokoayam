@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0, user-scalable=yes">
+    <title>Lily Broilers - Segar, Halal, Terpercaya</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <link rel="stylesheet" href="style.css?v=4.0">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Lapak Selection Modal -->
+    <div id="lapakModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLapakModal()">&times;</span>
+            <div class="modal-header">
+                <h2 class="modal-title">Pilih Lapak</h2>
+                <p class="modal-subtitle">Silakan pilih lapak mana yang ingin Anda hubungi</p>
+            </div>
+            <div class="lapak-options">
+                <a href="https://wa.me/6285813746135?text=Halo%20Lily%20Ayam%20Potong%20Lapak%201%20-%20Gang%20Aliman%2C%20saya%20ingin%20pesan%20ayam." class="lapak-option">
+                    <div class="lapak-icon">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="lapak-info">
+                        <h4>Lapak 1 - Cemplang Aliman</h4>
+                        <p>Aliman Sebelah Bengkel <br>Buka: 05:00 - 12:00 WIB</p>
+                    </div>
+                </a>
+                <a href="https://wa.me/6285778974015?text=Halo%20Isma%20Ayam%20Potong%20Lapak%202%20-%20Pasar%20Sabtu%2C%20saya%20ingin%20pesan%20ayam." class="lapak-option">
+                    <div class="lapak-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="lapak-info">
+                        <h4>Lapak 2 - Pasar Sabtu</h4>
+                        <p>Pasar Sabtu Sebelah Warung Sayur <br>Buka: 06:30 - 12:00 WIB</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-img">
+                    <img src="images/logo.png" alt="Logo" style="width: 60px; height: auto;">
+                </div>
+                <span class="logo-text">Lily Broilers</span>
+            </a>
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active">Beranda</a>
+                <a href="#about" class="nav-link">Tentang</a>
+                <a href="#products" class="nav-link">Produk</a>
+                <a href="#locations" class="nav-link">Lapak</a>
+                <a href="#contact" class="nav-link">Kontak</a>
+            </nav>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="floating-shapes">
+            <div class="shape"></div>
+            <div class="shape"></div>
+            <div class="shape"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Toko Ayam Potong Kami</h1>
+            <p class="hero-subtitle">Kami menyediakan ayam potong segar pilihan Anda, hadir dengan kualitas terbaik dan rasa yang lezat. Tersedia untuk pengambilan langsung maupun layanan antar terbatas. Silakan cek jam operasional dan informasi pengiriman di bawah ini.</p>
+            <div class="hero-cta">
+                <a href="#products" class="btn btn-primary">
+                    <i class="fas fa-shopping-cart"></i>
+                    Lihat Produk
+                </a>
+                <a href="javascript:void(0)" onclick="openLapakModal()" class="btn btn-secondary">
+                    <i class="fab fa-whatsapp"></i>
+                    Pesan
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-label">Pelanggan Puas</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="7">0</div>
+                    <div class="stat-label">Tahun Pengalaman</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="12">0</div>
+                    <div class="stat-label">Jenis Produk</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-number" data-count="100">0</div>
+                    <div class="stat-label">Segar Setiap Hari</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Tentang Ayam Potong Kami</h2>
+                <p class="section-subtitle">Kami berkomitmen menyediakan ayam potong berkualitas, dengan standar kebersihan yang terjaga serta pelayanan yang ramah dan terpercaya.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image fade-in">
+                    <img src="images/logo-ayam-kami.png" alt="Tentang Lily Ayam Potong">
+                </div>
+                <div class="about-text fade-in">
+                    <h3>Mengapa Memilih Kami?</h3>
+                    <p>Sejak tahun 2018, kami bangga menjadi pilihan utama masyarakat untuk kebutuhan ayam potong segar dan halal. Kami memahami pentingnya kualitas dan kesegaran dalam setiap produk yang kami tawarkan.</p>
+
+                    <p>Dengan pengalaman lebih dari 7 tahun dan ketelitian dalam setiap proses, kami memastikan setiap ayam yang Anda terima berada dalam kondisi prima, siap diolah menjadi hidangan lezat bagi keluarga tercinta.</p>
+
+                    <div class="features-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div>
+                                <strong>100% Halal</strong>
+                                <p>Bersertifikat halal resmi</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div>
+                                <strong>Segar Setiap Hari</strong>
+                                <p>Fresh tanpa pengawet</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <strong>Higienis</strong>
+                                <p>Standar kebersihan</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <strong>Layanan Antar Dekat</strong>
+                                <p>Konfirmasi area via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="section" id="products" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Produk Unggulan Kami</h2>
+                <p class="section-subtitle">Nikmati berbagai pilihan ayam potong segar dan berkualitas, dengan harga terbaik untuk memenuhi kebutuhan Anda <br> setiap hari.</p>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/ayam-campur.png" alt="Ayam Campur">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ayam Campur</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 24.000</span>
+                            <span class="old-price">Rp 28.000</span>
+                        </div>
+                        <p class="product-description">Berbagai potongan ayam segar dalam satu kemasan hemat untuk kebutuhan keluarga sehari-hari.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/kepala-ayam.png" alt="Kepala Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kepala Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 8.000</span>
+                        </div>
+                        <p class="product-description">Kepala ayam segar yang cocok untuk berbagai masakan tradisional dan sup yang kaya rasa.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/sayap.jpg" alt="Sayap Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Sayap Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 20.000</span>
+                            <span class="old-price">Rp 26.000</span>
+                        </div>
+                        <p class="product-description">Sayap ayam segar yang cocok untuk dibakar, digoreng, atau dijadikan sup yang lezat.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/ati-ampela.png" alt="Ati Ampela">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ati Ampela</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 25.000</span>
+                        </div>
+                        <p class="product-description">Ati dan ampela ayam segar yang kaya nutrisi, cocok untuk berbagai olahan tradisional.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/usus-ayam.png" alt="Usus Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Usus Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 15.000</span>
+                        </div>
+                        <p class="product-description">Usus ayam segar yang cocok untuk sate, sup, atau berbagai masakan pedas lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/fillet-ayam.png" alt="Ayam Fillet">
+                        <div class="product-badge">Sehat</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Fillet Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 33.000</span>
+                            <span class="old-price">Rp 40.000</span>
+                        </div>
+                        <p class="product-description">Dada ayam tanpa tulang dan kulit, siap olah untuk hidangan sehat dan bergizi tinggi.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/dada-ayam.png" alt="Dada Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Dada Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 26.000</span>
+                            <span class="old-price">Rp 32.000</span>
+                        </div>
+                        <p class="product-description">Dada ayam utuh dengan tulang, pilihan ekonomis dan serbaguna untuk berbagai masakan.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/ceker-ayam.png" alt="Ceker Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ceker Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 12.000</span>
+                        </div>
+                        <p class="product-description">Ceker ayam segar yang cocok untuk seblak, dimsum, atau masakan pedas lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/paha-ayam.png" alt="Paha Ayam">
+                        <div class="product-badge">Terlaris</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Paha Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 22.000</span>
+                            <span class="old-price">Rp 28.000</span>
+                        </div>
+                        <p class="product-description">Potongan paha ayam utuh yang kaya rasa, praktis untuk berbagai jenis masakan keluarga.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/kulit-ayam.png" alt="Kulit Ayam">
+                           <div class="product-badge">Sehat</div>
+                        
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Kulit Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 10.000</span>
+                        </div>
+                        <p class="product-description">Kulit ayam segar yang cocok untuk keripik kulit atau campuran masakan lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/rorongkong-ayam.png" alt="Rongkong Ayam">
+                           <div class="product-badge">Sehat</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Rongkong Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 18.000</span>
+                        </div>
+                        <p class="product-description">Rongkong (rangka) ayam yang cocok untuk kaldu, sup, atau masakan berkuah lainnya.</p>
+                    </div>
+                </div>
+
+                <div class="product-card fade-in">
+                    <div class="product-image">
+                        <img src="images/tullang-ayam.png" alt="Tulang Ayam">
+                           <div class="product-badge">Sehat</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Tulang Ayam</h3>
+                        <div class="product-price">
+                            <span class="current-price">Rp 8.000</span>
+                        </div>
+                        <p class="product-description">Tulang ayam berkualitas untuk membuat kaldu yang kaya dan bergizi tinggi.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Locations Section -->
+    <section class="section" id="locations">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Lokasi Lapak Kami</h2>
+                <p class="section-subtitle">Kunjungi dua lapak kami yang berlokasi strategis, <br> demi kenyamanan dan kemudahan Anda dalam <br> berbelanja langsung.</p>
+            </div>
+            
+            <div class="locations-grid">
+                <div class="location-card fade-in">
+                    <div class="location-image">
+                        <img src="images/lapak1.jpeg" alt="Lapak Pasar Pagi">
+                    </div>
+                    <div class="location-info">
+                        <h3 class="location-title">Lapak 1 - Cemplang Aliman</h3>
+                        <div class="location-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt detail-icon"></i>
+                                <span>Aliman Sebelah Bengkel</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock detail-icon"></i>
+                                <span>05:00 - 12:00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://wa.me/6285813746135?text=Halo%20Lily%20Ayam%20Potong%20Lapak%201%2C%20saya%20ingin%20pesan%20ayam." class="btn btn-whatsapp btn-small">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <a href="https://maps.app.goo.gl/pkV2hUHL8D5nuh3S9" class="btn btn-small" style="background: #4285F4; color: white;">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Lokasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="location-card fade-in">
+                    <div class="location-image">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=2070&q=80" alt="Lapak Depan Rumah">
+                    </div>
+                    <div class="location-info">
+                        <h3 class="location-title">Lapak 2 - Pasar Sabtu </h3>
+                        <div class="location-details">
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt detail-icon"></i>
+                                <span>Pasar Sabtu Sebelah Warung Sayur</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock detail-icon"></i>
+                                <span>06:30 - 12:00 WIB</span>
+                            </div>
+                        </div>
+                        <div class="product-actions">
+                            <a href="https://wa.me/6285778974015?text=Halo%20Isma%20Ayam%20Potong%20Lapak%202%2C%20saya%20ingin%20pesan%20ayam." class="btn btn-whatsapp btn-small">
+                                <i class="fab fa-whatsapp"></i>
+                                WhatsApp
+                            </a>
+                            <a href="https://maps.app.goo.gl/33EgeZy4zZTtLsfh9" class="btn btn-small" style="background: #4285F4; color: white;">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Lokasi
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact" style="background: var(--off-white);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">Kami siap melayani Anda dengan sepenuh hati. Lihat informasi kontak kami serta detail jam operasional dan layanan pengiriman di bawah ini.</p>
+            </div>
+            
+            <div class="contact-methods">
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <h3 class="contact-title">WhatsApp</h3>
+                    <p class="contact-details">Pesan & Respon:<br>06:00 - 22:00 WIB <br>Layanan Pengiriman:<br> 13:00 - 17:00 WIB</p>
+                    <a href="javascript:void(0)" onclick="openLapakModal()" class="btn btn-whatsapp btn-small">
+                        Chat Sekarang
+                    </a>
+                </div>
+                
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3 class="contact-title">Jam Operasional</h3>
+                    <p class="contact-details">Setiap Hari<br>05:00 - 12:00 WIB</p>
+                    <div class="btn btn-small" style="background: var(--success-green); color: white; cursor: default;">
+                    
+                    </div>
+                </div>
+
+                <div class="contact-item fade-in">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-title">Lokasi Lapak</h3>
+                    <p class="contact-details">2 Lapak Strategis<br>Di Bogor</p>
+                    <a href="#locations" class="btn btn-primary btn-small">
+                        Lihat Lokasi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Lily Ayam Potong</h3>
+                    <p>Penyedia ayam potong segar dan halal terpercaya sejak 2018.<br>Kami berkomitmen menghadirkan kualitas terbaik untuk keluarga Indonesia.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Produk Kami</h3>
+                    <ul>
+                        <li><a href="#products">Ayam Campur</a></li>
+                        <li><a href="#products">Kepala Ayam</a></li>
+                        <li><a href="#products">Sayap Ayam</a></li>
+                        <li><a href="#products">Ati Ampela</a></li>
+                        <li><a href="#products">Fillet Ayam</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Layanan</h3>
+                    <ul>
+                        <li><a href="#about">Tentang Kami</a></li>
+                        <li><a href="#locations">Lapak Kami</a></li>
+                        <li><a href="#contact">Pesan Antar</a></li>
+                        <li><a href="#contact">Konsultasi</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Kontak Info</h3>
+                    <ul>
+                        <li><i class="fab fa-whatsapp"></i> +62 858 1374 6135</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 2 Lapak di Bogor</li>
+                        <li><i class="fas fa-clock"></i> 05:00 - 11:00 WIB</li>
+                    </ul>
+                </div>
+            </div> 
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lily Broilers. Dibuat dengan <i class="fas fa-heart" style="color: #DC2626;"></i> untuk pelanggan terbaik kami.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
